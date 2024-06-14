@@ -2,7 +2,7 @@
 
 body {
   /* background-color: hsla(0, 2%, 82%, 0.808); */
-  background-image: url("gradient-minimalist-background_23-2149976737.avif");
+  background-image: url("pexels-diego-giron-464799823-16554762.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -30,7 +30,7 @@ label {
 }
 
 form {
-  background-color: white;
+  background-color: hsla(0, 0%, 100%, 0.349);
   padding: 25px;
   display: flex;
   flex-direction: column;
@@ -38,6 +38,7 @@ form {
   gap: 1.5rem;
   width: 100%;
   height: auto;
+  border-radius: 10px;
 }
 form input {
   width: 100%;
@@ -49,12 +50,13 @@ form input {
 button {
   align-self: center;
   font-family: "Roboto", sans-serif;
-  padding: 10px 20px;
+  padding: 15px 25px;
   border: none;
   font-size: 14px;
   background-color: hsl(0, 2%, 18%);
   color: white;
   cursor: pointer;
+  border-radius: 5px;
 }
 
 button:hover {
