@@ -11,7 +11,7 @@ function UncontrolledForm() {
   const [emailError, setEmailError] = useState(false);
   const [phoneError, setPhoneError] = useState(false);
 
-  const handleValidation = (inputRef, setError) => {
+  const validate = (inputRef, setError) => {
     if (!inputRef.current.value) {
       inputRef.current.style.border = "1px solid red";
       setError(true);
@@ -28,10 +28,10 @@ function UncontrolledForm() {
     const email = emailRef.current.value;
     const phone = phoneRef.current.value;
 
-    handleValidation(firstNameRef, setFirstNameError);
-    handleValidation(lastNameRef, setLastNameError);
-    handleValidation(emailRef, setEmailError);
-    handleValidation(phoneRef, setPhoneError);
+    validate(firstNameRef, setFirstNameError);
+    validate(lastNameRef, setLastNameError);
+    validate(emailRef, setEmailError);
+    validate(phoneRef, setPhoneError);
 
     if (!firstName || !lastName || !email || !phone) {
       return;
@@ -59,7 +59,7 @@ function UncontrolledForm() {
             type="text"
             name="First name"
             ref={firstNameRef}
-            onInput={() => handleValidation(firstNameRef, setFirstNameError)}
+            onInput={() => validate(firstNameRef, setFirstNameError)}
           />
           {firstNameError && (
             <span className="error-text">First name is required</span>
@@ -71,7 +71,7 @@ function UncontrolledForm() {
             type="text"
             name="Last name"
             ref={lastNameRef}
-            onInput={() => handleValidation(lastNameRef, setLastNameError)}
+            onInput={() => validate(lastNameRef, setLastNameError)}
           />
           {lastNameError && (
             <span className="error-text">Last name is required</span>
@@ -83,7 +83,7 @@ function UncontrolledForm() {
             type="email"
             name="Email"
             ref={emailRef}
-            onInput={() => handleValidation(emailRef, setEmailError)}
+            onInput={() => validate(emailRef, setEmailError)}
           />
           {emailError && <span className="error-text">Email is required</span>}
         </div>
@@ -93,7 +93,7 @@ function UncontrolledForm() {
             type="number"
             name="Last name"
             ref={phoneRef}
-            onInput={() => handleValidation(phoneRef, setPhoneError)}
+            onInput={() => validate(phoneRef, setPhoneError)}
           />
           {phoneError && <span className="error-text">Phone is required</span>}
         </div>
